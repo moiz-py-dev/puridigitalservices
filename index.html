@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Puri Digital Services | Coming Soon</title>
+<meta name="description" content="Puri Digital Services is launching soon.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#07140D">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07140D;--line:#14301F;--gold:#D8AE5C;--cream:#F1EADB;--muted:#A9B8AC}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--muted);font:400 16px/1.6 'Manrope',system-ui,sans-serif;display:flex;align-items:center;justify-content:center;text-align:center;padding:env(safe-area-inset-top,0px) 24px env(safe-area-inset-bottom,0px);overflow:hidden}
+canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+main{position:relative;z-index:1;max-width:560px}
+.logo{width:clamp(150px,34vw,230px);height:auto;display:block;margin:0 auto 26px;animation:rise 1.2s ease-out both}
+h1{font:500 clamp(1.9rem,6vw,3rem)/1.15 'Fraunces',Georgia,serif;color:var(--cream);margin-bottom:14px;animation:rise 1.2s .15s ease-out both}
+p{max-width:40ch;margin:0 auto;animation:rise 1.2s .3s ease-out both}
+.bar{width:84px;height:2px;margin:26px auto 0;background:var(--line);position:relative;overflow:hidden}
+.bar::after{content:"";position:absolute;inset:0;width:40%;background:var(--gold);animation:slide 2.4s ease-in-out infinite alternate}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes slide{to{transform:translateX(150%)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<canvas id="net" aria-hidden="true"></canvas>
+<main>
+  <img class="logo" src="images/logo.png" alt="Puri Digital Services logo">
+  <h1>Our new website is on its way.</h1>
+  <p>Puri Digital Services is launching soon. Please check back shortly.</p>
+  <div class="bar" aria-hidden="true"></div>
+</main>
+<script>
+(function(){
+  var c=document.getElementById('net'),x=c.getContext('2d'),W,H,pts=[],still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function size(){var d=window.devicePixelRatio||1;W=innerWidth;H=innerHeight;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);
+    var n=Math.min(60,Math.floor(W*H/22000));pts=[];for(var i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25});}
+  function draw(){x.clearRect(0,0,W,H);
+    for(var i=0;i<pts.length;i++){var p=pts[i];if(!still){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}
+      for(var j=i+1;j<pts.length;j++){var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<150){x.strokeStyle='rgba(216,174,92,'+(0.16*(1-d/150))+')';x.lineWidth=1;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke();}}
+      x.fillStyle='rgba(216,174,92,.45)';x.beginPath();x.arc(p.x,p.y,1.6,0,6.283);x.fill();}
+    if(!still)requestAnimationFrame(draw);}
+  addEventListener('resize',function(){size();if(still)draw();});size();draw();
+})();
+</script>
+</body>
+</html>
