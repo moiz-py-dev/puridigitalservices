@@ -1,54 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Puri Digital Services | Coming Soon</title>
-<meta name="description" content="Puri Digital Services is launching soon.">
-<meta name="robots" content="noindex">
-<meta name="theme-color" content="#07140D">
-<link rel="icon" href="image/logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#07140D;--line:#14301F;--gold:#D8AE5C;--cream:#F1EADB;--muted:#A9B8AC}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{background:var(--bg);color:var(--muted);font:400 16px/1.6 'Manrope',system-ui,sans-serif;display:flex;align-items:center;justify-content:center;text-align:center;padding:env(safe-area-inset-top,0px) 24px env(safe-area-inset-bottom,0px);overflow:hidden}
-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0}
-main{position:relative;z-index:1;max-width:560px}
-.logo{width:clamp(150px,34vw,230px);height:auto;display:block;margin:0 auto 26px;animation:rise 1.2s ease-out both}
-h1{font:500 clamp(1.9rem,6vw,3rem)/1.15 'Fraunces',Georgia,serif;color:var(--cream);margin-bottom:14px;animation:rise 1.2s .15s ease-out both}
-p{max-width:40ch;margin:0 auto;animation:rise 1.2s .3s ease-out both}
-.bar{width:84px;height:2px;margin:26px auto 0;background:var(--line);position:relative;overflow:hidden}
-.bar::after{content:"";position:absolute;inset:0;width:40%;background:var(--gold);animation:slide 2.4s ease-in-out infinite alternate}
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@keyframes slide{to{transform:translateX(150%)}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important}}
-</style>
-</head>
-<body>
-<canvas id="net" aria-hidden="true"></canvas>
-<main>
-  <img class="logo" src="image/logo.png" alt="Puri Digital Services logo">
-  <h1>Our new website is on its way.</h1>
-  <p>Puri Digital Services is launching soon. Please check back shortly.</p>
-  <div class="bar" aria-hidden="true"></div>
-</main>
-<script>
-(function(){
-  var c=document.getElementById('net'),x=c.getContext('2d'),W,H,pts=[],still=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  function size(){var d=window.devicePixelRatio||1;W=innerWidth;H=innerHeight;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);
-    var n=Math.min(60,Math.floor(W*H/22000));pts=[];for(var i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25});}
-  function draw(){x.clearRect(0,0,W,H);
-    for(var i=0;i<pts.length;i++){var p=pts[i];if(!still){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}
-      for(var j=i+1;j<pts.length;j++){var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
-        if(d<150){x.strokeStyle='rgba(216,174,92,'+(0.16*(1-d/150))+')';x.lineWidth=1;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke();}}
-      x.fillStyle='rgba(216,174,92,.45)';x.beginPath();x.arc(p.x,p.y,1.6,0,6.283);x.fill();}
-    if(!still)requestAnimationFrame(draw);}
-  addEventListener('resize',function(){size();if(still)draw();});size();draw();
-})();
-</script>
-</body>
-</html>
+<title>Puri Digital Services | Web Development, SEO, Design & Video Agency in Lahore</title>
+<meta name="description" content="All-in-one digital agency in Lahore: websites, SEO, graphic design, digital marketing, product shoots and video production for businesses across Pakistan.">
+<link rel="canonical" href="https://www.puridigitalservices.com/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#05100a">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Puri Digital Services">
+<meta property="og:title" content="Puri Digital Services | Web Development, SEO, Design & Video Agency in Lahore"><meta property="og:description" content="All-in-one digital agency in Lahore: websites, SEO, graphic design, digital marketing, product shoots and video production for businesses across Pakistan.">
+<meta property="og:url" content="https://www.puridigitalservices.com/"><meta property="og:image" content="https://www.puridigitalservices.com/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Puri Digital Services", "url": "https://www.puridigitalservices.com/", "logo": "https://www.puridigitalservices.com/assets/logo-full.png", "image": "https://www.puridigitalservices.com/assets/og-image.jpg", "email": "Puridigitalservices@gmail.com", "telephone": "+923155553257", "description": "All-in-one digital agency offering website development, SEO, graphic design, digital marketing, product shoots and video production.", "areaServed": "Pakistan", "address": {"@type": "PostalAddress", "streetAddress": "Office# 3, 1st Floor, 122 Abu Bakar Block, Masood Farouqi Road, New Garden Town", "addressLocality": "Lahore", "postalCode": "54600", "addressCountry": "PK"}, "sameAs": ["https://www.linkedin.com/company/puri-digital-services/", "https://www.instagram.com/puri_digital_services/", "https://web.facebook.com/profile.php?id=61594775229561"]}</script>
+</head><body>
+<header><div class="wrap nav">
+ <a class="brand" href="index.html"><img src="assets/logo-icon.png" alt="Puri Digital Services logo"><span>Puri Digital Services</span></a>
+ <div class="right"><nav aria-label="Main"><ul><li><a class="l" href="index.html" data-page="index">Home</a></li><li><a class="l" href="about.html" data-page="about">About</a></li><li><a class="l" href="services.html" data-page="services">Services</a></li><li><a class="l" href="team.html" data-page="team">Team</a></li><li><a class="l" href="why-us.html" data-page="why-us">Why Us</a></li><li><a class="l" href="portfolio/index.html" data-page="portfolio">Portfolio</a></li><li><a class="l" href="contact.html" data-page="contact">Contact</a></li><li class="mcta"><a class="btn sm" href="contact.html#book" data-open>Book a Meeting</a></li></ul></nav><a class="btn sm" href="contact.html#book" data-open>Book a Meeting</a></div>
+ <button class="menu" aria-expanded="false" aria-label="Open menu">Menu</button></div></header>
+<main id="top"><section class="hero"><div class="bars" id="bars" aria-hidden="true"></div>
+<div class="wrap"><h1>Everything your business needs online<span>from one team.</span></h1>
+<p>Our work across web, SEO, design, marketing, content, product shoots and video production, delivered for clients in Pakistan&nbsp;and&nbsp;abroad.</p>
+<div class="cta"><a class="btn" href="contact.html#book" data-open>Schedule a meeting</a><a class="btn o" href="services.html">Explore services</a></div></div></section>
+<div class="marq" aria-hidden="true"><div class="mt"><span>Website Development</span><i>◆</i><span>SEO</span><i>◆</i><span>Graphic Designing</span><i>◆</i><span>Digital Marketing</span><i>◆</i><span>Product Shoots</span><i>◆</i><span>Video Production</span><i>◆</i><span>Website Development</span><i>◆</i><span>SEO</span><i>◆</i><span>Graphic Designing</span><i>◆</i><span>Digital Marketing</span><i>◆</i><span>Product Shoots</span><i>◆</i><span>Video Production</span><i>◆</i></div></div>
+<div class="stats"><div><b data-count="6">6</b><span>Core Services</span></div><div><b data-count="7">7</b><span>Core Team Members</span></div><div><b>Lahore</b><span>Pakistan Office</span></div><div><b>Pakistan</b><span>Serving Businesses Nationwide</span></div></div>
+<section id="about"><div class="wrap"><h2>About Puri Digital Services</h2><div class="dia"><i></i></div>
+<p class="abt">Puri Digital Services is a full-service digital agency built to help businesses establish and grow their online presence. We specialize in website development, SEO, graphic design, digital marketing and video production, offering everything a modern business needs under one roof.</p><a class="lnk" href="about.html">Learn more about us <svg class="i" aria-hidden="true"><use href="#arr"/></svg></a></div></section>
+<section class="alt"><div class="wrap"><h2>Our Services</h2><div class="dia"><i></i></div><p class="lead">Choose one service or combine them. One team keeps your brand consistent from website to video.</p>
+<div class="grid g3 tiles"><div class="card"><div class="ic"><svg class="i" aria-hidden="true"><use href="#i-web"/></svg></div><h3>Website Development</h3><p>Custom, fast, mobile-friendly websites tailored to your business needs.</p></div><div class="card"><div class="ic"><svg class="i" aria-hidden="true"><use href="#i-seo"/></svg></div><h3>SEO</h3><p>Rank higher on Google with keyword research and on-page optimization.</p></div><div class="card"><div class="ic"><svg class="i" aria-hidden="true"><use href="#pen"/></svg></div><h3>Graphic Designing</h3><p>Eye-catching logos, social media creatives and brand visuals that stand out.</p></div><div class="card"><div class="ic"><svg class="i" aria-hidden="true"><use href="#mkt"/></svg></div><h3>Digital Marketing</h3><p>Social media management, Meta Ads and content strategy to grow your online presence.</p></div><div class="card"><div class="ic"><svg class="i" aria-hidden="true"><use href="#cam"/></svg></div><h3>Product Shoots</h3><p>Professional product photography for e-commerce, catalogs and social media.</p></div><div class="card"><div class="ic"><svg class="i" aria-hidden="true"><use href="#vid"/></svg></div><h3>Video Production</h3><p>On-site video shooting and editing, from corporate videos to project showcases.</p></div></div><a class="lnk" href="services.html">See all services <svg class="i" aria-hidden="true"><use href="#arr"/></svg></a></div></section>
+<section id="work"><div class="wrap"><h2>Our Work</h2><div class="dia"><i></i></div><p class="lead">Websites, videos and creative designs we have delivered for clients in Pakistan and abroad. The full collection lives in our portfolio.</p>
+<div class="grid g3 doors">
+<a class="card door" href="portfolio/index.html#f-web" aria-label="See our websites in the portfolio"><div class="dv"><div class="bw"><div class="bb"><i></i><i></i><i></i></div><div class="cyc"><img src="assets/work/web4.jpg" alt="Lumièreva jewellery website" loading="lazy" width="640" height="330"><img src="assets/work/web1.jpg" alt="" loading="lazy" width="640" height="309"><img src="assets/work/web2.jpg" alt="" loading="lazy" width="640" height="301"><img src="assets/work/web3.jpg" alt="" loading="lazy" width="640" height="326"></div></div></div><h3>Websites</h3><p>Corporate, education, food and jewellery sites, built and managed for our clients.</p><span class="go">See websites <svg class="i" aria-hidden="true"><use href="#arr"/></svg></span></a>
+<a class="card door" href="portfolio/index.html#f-video" aria-label="See our videos in the portfolio"><div class="dv"><div class="ph"><div class="cyc"><img src="assets/work/vid1.jpg" alt="Gym promo reel" loading="lazy" width="360" height="640"><img src="assets/work/vid2.jpg" alt="" loading="lazy" width="360" height="640"><img src="assets/work/vid3.jpg" alt="" loading="lazy" width="360" height="640"><img src="assets/work/vid4.jpg" alt="" loading="lazy" width="360" height="640"></div><span class="pl" aria-hidden="true">&#9654;</span></div></div><h3>Videos</h3><p>Promo reels, product ads and social videos with motion graphics and branded end cards.</p><span class="go">Watch videos <svg class="i" aria-hidden="true"><use href="#arr"/></svg></span></a>
+<a class="card door" href="portfolio/index.html#f-creative" aria-label="See our creatives in the portfolio"><div class="dv"><div class="sq"><div class="cyc"><img src="assets/work/cre1.jpg" alt="Starlet social media creative" loading="lazy" width="520" height="520"><img src="assets/work/cre3.jpg" alt="" loading="lazy" width="520" height="520"><img src="assets/work/cre2.jpg" alt="" loading="lazy" width="520" height="520"><img src="assets/work/cre4.jpg" alt="" loading="lazy" width="520" height="520"></div></div></div><h3>Creatives &amp; Branding</h3><p>Social media designs, campaign posts and logos that keep a brand consistent everywhere.</p><span class="go">See creatives <svg class="i" aria-hidden="true"><use href="#arr"/></svg></span></a>
+</div>
+<div class="cta" style="margin-top:44px"><a class="btn" href="portfolio/index.html">Open our full portfolio <svg class="i" aria-hidden="true"><use href="#arr"/></svg></a></div></div></section>
+<section id="process"><div class="wrap"><h2>How We Work</h2><div class="dia"><i></i></div><p class="lead">A clear path from the first conversation to launch, with you involved at every stage.</p>
+<div class="tl"><div class="tl-line"><i class="tl-fill"></i></div>
+<div class="st8"><div class="dot">1</div><h3>Meeting</h3><p>We confirm a time, then meet to learn about your business, audience and goals.</p></div>
+<div class="st8"><div class="dot">2</div><h3>Plan</h3><p>You receive a clear scope, timeline and price after we have discussed your needs.</p></div>
+<div class="st8"><div class="dot">3</div><h3>Design &amp; Build</h3><p>You review each stage and share feedback as the work takes shape.</p></div>
+<div class="st8"><div class="dot">4</div><h3>Launch &amp; Support</h3><p>We publish your project and stay available after it goes live.</p></div></div></div></section>
+<section class="alt"><div class="wrap"><h2>Why Choose Us</h2><div class="dia"><i></i></div><div class="why"><div><div class="ic"><svg class="i" aria-hidden="true"><use href="#price"/></svg></div><h3>Affordable Pricing</h3><p>Quality services within your budget.</p></div><div><div class="ic"><svg class="i" aria-hidden="true"><use href="#fast"/></svg></div><h3>Fast Turnaround</h3><p>Quick delivery without compromising quality.</p></div><div><div class="ic"><svg class="i" aria-hidden="true"><use href="#sup"/></svg></div><h3>Dedicated Support</h3><p>Direct communication, no middlemen.</p></div><div><div class="ic"><svg class="i" aria-hidden="true"><use href="#all"/></svg></div><h3>All-in-One Solution</h3><p>Website, SEO, marketing and video services from a single agency.</p></div></div><a class="lnk" href="why-us.html">More about why clients choose us <svg class="i" aria-hidden="true"><use href="#arr"/></svg></a></div></section>
+<section id="reviews" class="alt"><div class="wrap"><h2>Client Feedback</h2><div class="dia"><i></i></div><p class="lead">What our clients say about working with us.</p>
+<div class="car" id="car"><div class="stage" id="stage"></div><div class="cdots"><button class="ar" id="prv" type="button" aria-label="Previous review">&lsaquo;</button><span id="dots"></span><button class="ar" id="nxt" type="button" aria-label="Next review">&rsaquo;</button></div></div></div></section><section class="ctab"><div class="wrap"><h2>Ready to grow your business online?</h2><div class="dia"><i></i></div><p class="lead">Message us on WhatsApp or email to book a meeting. We will confirm a time that suits you, then sit down together to discuss your needs.</p><div class="cta" style="margin-top:34px"><a class="btn" href="contact.html#book" data-open>Schedule a meeting</a><a class="btn o" href="tel:+923155553257">Call us now</a></div></div></section></main>
+<footer><div class="wrap"><div class="fg">
+ <div class="fb"><img src="assets/logo-full.png" alt="Puri Digital Services"><p class="tag">An all-in-one digital agency for websites, SEO, design, marketing and video production.</p>
+ <div class="soc">
+ <a href="https://www.linkedin.com/company/puri-digital-services/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="i b" aria-hidden="true"><use href="#li"/></svg></a>
+ <a href="https://www.instagram.com/puri_digital_services/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="i b" aria-hidden="true"><use href="#ig"/></svg></a>
+ <a href="https://web.facebook.com/profile.php?id=61594775229561" target="_blank" rel="noopener" aria-label="Facebook"><svg class="i b" aria-hidden="true"><use href="#fb"/></svg></a></div></div>
+ <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Team</a></li><li><a href="why-us.html">Why Us</a></li><li><a href="portfolio/index.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+ <div><h4>Our Services</h4><ul><li><a href="services.html#web">Website Development</a></li><li><a href="services.html#seo">SEO</a></li><li><a href="services.html#design">Graphic Designing</a></li><li><a href="services.html#marketing">Digital Marketing</a></li><li><a href="services.html#product">Product Shoots</a></li><li><a href="services.html#video">Video Production</a></li></ul></div>
+ </div><div class="fbot">© <span class="y"></span> Puri Digital Services. All rights reserved.</div></div></footer><a class="wafab" href="https://wa.me/923155553257?text=Hello%20Puri%20Digital%20Services%2C%0A%0AI%20would%20like%20to%20book%20a%20meeting%20to%20discuss%20my%20project.%0A%0AName%3A%0AService%20needed%3A%0APreferred%20day%20and%20time%3A%0A%0AKindly%20confirm%20a%20suitable%20time.%20Thank%20you." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg class="i b" aria-hidden="true"><use href="#wa"/></svg></a><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-web" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2" />
+  <line x1="8" x2="16" y1="21" y2="21" />
+  <line x1="12" x2="12" y1="17" y2="21" /></symbol><symbol id="i-seo" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34" />
+  <circle cx="11" cy="11" r="8" /></symbol><symbol id="pen" viewBox="0 0 24 24"><path d="m18 13-.654-4.736a4 4 0 00-2.756-3.266l-9.163-2.9a2 2 0 00-2.017.493l-.82.819a2 2 0 00-.492 2.017l2.9 9.163a4 4 0 003.266 2.756L13 18" />
+  <path d="M18.648 12.352a1.205 1.205 0 011.704 0l1.296 1.296a1.205 1.205 0 010 1.704l-6.296 6.296a1.205 1.205 0 01-1.704 0l-1.296-1.296a1.205 1.205 0 010-1.704z" />
+  <path d="m3 3 6.586 6.586" />
+  <circle cx="11" cy="11" r="2" /></symbol><symbol id="mkt" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" />
+  <circle cx="12" cy="12" r="6" />
+  <circle cx="12" cy="12" r="2" /></symbol><symbol id="cam" viewBox="0 0 24 24"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z" />
+  <circle cx="12" cy="13" r="3" /></symbol><symbol id="vid" viewBox="0 0 24 24"><path d="m12.296 3.464 3.02 3.956" />
+  <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z" />
+  <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+  <path d="m6.18 5.276 3.1 3.899" /></symbol><symbol id="price" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+  <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
+  <path d="M12 18V6" /></symbol><symbol id="fast" viewBox="0 0 24 24"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" /></symbol><symbol id="sup" viewBox="0 0 24 24"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" />
+  <path d="M21 16v2a4 4 0 0 1-4 4h-5" /></symbol><symbol id="all" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
+  <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
+  <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></symbol><symbol id="pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+  <circle cx="12" cy="10" r="3" /></symbol><symbol id="mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+  <rect x="2" y="4" width="20" height="16" rx="2" /></symbol><symbol id="arr" viewBox="0 0 24 24"><path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" /></symbol><symbol id="star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></symbol><symbol id="li" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol><symbol id="ig" viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol><symbol id="fb" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></symbol><symbol id="wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol></defs></svg>
+<script src="main.js"></script></body></html>
