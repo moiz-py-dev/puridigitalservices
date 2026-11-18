@@ -109,5 +109,4 @@ Plain HTML, CSS and vanilla JavaScript (no build step). Fonts: Fraunces and Manr
 
 ## 8. Call button
 
-
-"Call us now" uses `tel:+923155553257`. On a phone it opens the dialer. On a computer there is no dialer, so the site shows a small message with the number and copies it instead.
+ll us now" uses `tel:+923155553257`. On a phone it opens the dialer. On a computer there is no dialer, so the site shows a small message with the number and copies it instead.
